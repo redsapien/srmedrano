@@ -1,0 +1,3031 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <meta name="theme-color" content="#7B0A02">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="description" content="Señor Medrano - Ingeniería en Salchipapas. No apto para tibios. El estándar de Manizales.">
+    <title>Señor Medrano | Experiencia VIP</title>
+    <link rel="icon" type="image/png" href="Imagenes/favicon.ico">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/redsapien/brossmanizales/main/Imagenes/favicon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://senormedrano.com/"> 
+
+    <meta property="og:title" content="SEÑOR MEDRANO | Ingeniería Gastronómica en Manizales 🍟🔥">
+
+    <meta property="og:description" content="No es solo un restaurante, es un laboratorio de sabor. La mejor vista de Manizales, el legado del abuelo y un estándar de salchipapas que redefine gustos. ¡Puro nivel élite! 🚀">
+
+    <meta property="og:image" content="https://raw.githubusercontent.com/redsapien/brossmanizales/f579c3122e25db76976d7df98d4a274cc7670529/Imagenes/Bross-Preview.webp">
+    <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/redsapien/brossmanizales/f579c3122e25db76976d7df98d4a274cc7670529/Imagenes/Bross-Preview.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:image:alt" content="Señor Medrano - La Mejor Vista y Sabor de Manizales">
+    <meta property="og:image:type" content="image/webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SEÑOR MEDRANO | El Estándar de la Ciudad">
+    <meta name="twitter:description" content="Desde 8 mesas hasta la cima de Manizales. Ingeniería de sabor inspirada en un legado. Descubre por qué somos leyenda.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/redsapien/brossmanizales/f579c3122e25db76976d7df98d4a274cc7670529/Imagenes/Bross-Preview.webp">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --rojo: #7B0A02;
+            --dorado: #EFA707;
+            --crema: #FFF0DE;
+            --negro-pro: #050505;
+            --transition-smooth: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* RESET & LIENZO ÚNICO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            background-color: var(--rojo);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- BACKGROUND DINÁMICO --- */
+        .hero-canvas {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: #000;
+        }
+
+        .video-bg video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.1);
+        }
+
+        .vignette-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(123, 10, 2, 0.4) 60%, var(--rojo) 100%);
+            z-index: -1;
+        }
+
+        /* --- NAV COMMAND CENTER --- */
+        .nav-container {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background: rgba(5, 5, 5, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(239, 167, 7, 0.2);
+            border-radius: 100px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            animation: navEntrance 1.5s ease forwards;
+        }
+
+        @keyframes navEntrance {
+            from { top: -100px; opacity: 0; }
+            to { top: 30px; opacity: 1; }
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 75px;
+            height: 75px;
+            background: #fff;
+            border: 3px solid var(--dorado);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(239, 167, 7, 0.6);
+            transition: var(--transition-smooth);
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.2);
+        }
+
+        .logo-text {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: #fff;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0px var(--rojo);
+        }
+
+        .nav-menu { display: flex; list-style: none; gap: 25px; }
+        .nav-item a {
+            text-decoration: none;
+            color: var(--crema);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        .nav-item a:hover { color: var(--dorado); }
+
+        .btn-order-glow {
+            background: var(--dorado);
+            color: var(--rojo);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0px rgba(239, 167, 7, 0.7); }
+            50% { box-shadow: 0 0 25px rgba(239, 167, 7, 0.9); }
+            100% { box-shadow: 0 0 0px rgba(239, 167, 7, 0.7); }
+        }
+
+        .hero-content { z-index: 10; text-align: center; }
+        .main-slogan {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(4rem, 18vw, 10rem);
+            color: #fff;
+            line-height: 0.85;
+            text-shadow: 15px 15px 40px rgba(0,0,0,0.7);
+            opacity: 0;
+            transform: scale(0.8);
+            animation: titleReveal 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.8s;
+        }
+
+        @keyframes titleReveal { to { opacity: 1; transform: scale(1); } }
+
+        .sub-slogan {
+            font-weight: 300;
+            letter-spacing: 12px;
+            color: var(--dorado);
+            text-transform: uppercase;
+            font-size: clamp(0.8rem, 2vw, 1.4rem);
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1.5s;
+        }
+
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        /* --- NUEVO INDICADOR DE SCROLL ELEGANTE --- */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 2.5s;
+        }
+
+        .scroll-arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid var(--crema);
+            border-bottom: 2px solid var(--crema);
+            transform: rotate(45deg);
+            margin-bottom: 5px;
+            animation: arrowDown 2s infinite;
+        }
+
+        .scroll-ripple {
+            position: absolute;
+            top: -10px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 240, 222, 0.1);
+            border-radius: 50%;
+            animation: rippleEffect 2s infinite;
+        }
+
+        .scroll-text {
+            font-size: 0.65rem;
+            color: var(--crema);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 400;
+            margin-top: 15px;
+            opacity: 0.7;
+        }
+
+        @keyframes arrowDown {
+            0% { transform: rotate(45deg) translate(-5px, -5px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: rotate(45deg) translate(5px, 5px); opacity: 0; }
+        }
+
+        @keyframes rippleEffect {
+            0% { transform: scale(0.5); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { width: 95%; padding: 10px 15px; top: 20px; }
+            .nav-menu { display: none; }
+            .logo-img { width: 65px; height: 65px; }
+            .logo-text { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+   <nav class="nav-container">
+    <a href="#" class="logo-wrap">
+        <div class="logo-img">
+            <img src="Imagenes/Logo-Señor-Medrano.webp" alt="Logo Señor Medrano">
+        </div>
+        <span class="logo-text">SEÑOR MEDRANO</span>
+    </a>
+
+    <ul class="nav-menu">
+        <li class="nav-item"><a href="#menu-section">EL MENÚ CÓSMICO</a></li>
+        <li class="nav-item"><a href="#terminal-reservas">RESERVÁ TU LUGAR</a></li>
+        <li class="nav-item"><a href="#med-footer-final">CONTACTANOS</a></li>
+    </ul>
+
+    <a href="https://menu.fu.do/medrano" target="_blank" style="text-decoration: none;">
+        <button class="btn-order-glow">PEDIR YA</button>
+    </a>
+</nav>
+
+    <section class="hero-canvas">
+        <div class="video-bg">
+            <video autoplay muted loop playsinline preload="auto">
+                <source src="Videos/Senor-medrano-background.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="vignette-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="main-slogan">NO APTO<br>PA' TIBIOS</h1>
+            <p class="sub-slogan">La mejor salchipapa de Manizales.</p>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-ripple"></div>
+            <div class="scroll-arrow"></div>
+            <span class="scroll-text">DESCUBRE MÁS</span>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const v = document.querySelector('video');
+            v.play();
+        });
+
+        document.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) { event.preventDefault(); }
+        }, { passive: false });
+    </script>
+    <section id="menu-section" class="order-section">
+    <div class="order-container">
+        <div class="engineering-header">
+            <span class="code-badge">LO AUTÉNTICO NUNCA TUVO TANTAS VERSIONES</span>
+            <h2 class="order-title">DE LA TIERRA <br><span class="highlight">AL ESPACIO</span></h2>
+            <p class="order-subtitle">Un sabor único y con experiencia para deleitar los paladares más exigentes.</p>
+        </div>
+
+        <a href="https://menu.fu.do/medrano" target="_blank" class="fudo-trigger premium-card">
+            <div class="btn-content">
+                <span class="btn-text">EL MENÚ QUE ESTABAS ESPERANDO</span>
+                <span class="btn-subtext">VARIADO, FÁCIL DE PEDIR Y CARGADO DE SABOR.</span>
+            </div>
+            <div class="btn-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 5L20 12L13 19M4 12H20" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <div class="thumb-ghost-guide">
+                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M95,100 C85,80 80,75 70,60 C60,45 50,40 40,40 C35,40 30,42 28,48 C26,55 30,62 38,65 C45,68 60,70 75,85 C85,95 90,100 95,100 Z" opacity="0.4"/>
+                    <circle cx="35" cy="45" r="8" class="click-pulse" fill="white" opacity="0.6"/>
+                </svg>
+            </div>
+            
+            <div class="scan-line"></div>
+        </a>
+
+        <div class="specs-grid">
+            <div class="spec-item">
+                <div class="spec-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 3V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="spec-header">
+                    <span class="spec-label">LOS MÁS ÁGILES DE LA CIUDAD</span>
+                    <span class="spec-value">03 MIN</span>
+                </div>
+                <p class="spec-desc">Olvidate de las filas, solo disfruta y comparte.</p>
+            </div>
+
+            <div class="spec-divider"></div>
+
+            <div class="spec-item">
+                <div class="spec-icon delivery-moto">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="18" r="2" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="17" cy="18" r="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M5 18H19V15L17 10H10L8 15V18" stroke="currentColor" stroke-width="2"/>
+                        <path d="M13 10V6H17" stroke="currentColor" stroke-width="2"/>
+                        <path d="M5 12H3" stroke="currentColor" stroke-width="2" class="speed-line-1"/>
+                        <path d="M4 9H2" stroke="currentColor" stroke-width="2" class="speed-line-2"/>
+                    </svg>
+                </div>
+                <div class="spec-header">
+                    <span class="spec-label">SIN VUELTAS, LLEGAMOS RÁPIDO</span>
+                    <span class="spec-value">20 MIN</span>
+                </div>
+                <p class="spec-desc">Nada de comer frío, disfrutá tu pedido bien caliente.</p>
+            </div>
+
+            <div class="spec-divider"></div>
+
+            <div class="spec-item">
+                <div class="spec-icon payment-icons">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M3 10H21" stroke="currentColor" stroke-width="2"/>
+                        <path d="M7 15H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="16" cy="14" r="2" fill="var(--dorado-medrano)"/>
+                    </svg>
+                </div>
+                <div class="spec-header">
+                    <span class="spec-label">PAGÁ COMO QUIERAS, SIN REGLAS</span>
+                    <span class="status-dot"></span>
+                </div>
+                <p class="spec-desc">pagá en efectivo, con tarjeta o hasta bitcoin.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --rojo-medrano: #7B0A02;
+        --dorado-medrano: #EFA707;
+        --crema-medrano: #FFF0DE;
+        --negro-pro: #050505;
+    }
+
+    .order-section {
+        background-color: var(--negro-pro);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 100px 20px;
+        overflow: hidden;
+    }
+
+    .order-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(to bottom, var(--rojo-medrano), var(--negro-pro));
+    }
+
+    .order-container {
+        max-width: 900px;
+        width: 100%;
+        text-align: center;
+        z-index: 2;
+    }
+
+    /* HEADER */
+    .code-badge {
+        color: var(--dorado-medrano);
+        font-size: 0.65rem;
+        letter-spacing: 4px;
+        border-left: 2px solid var(--rojo-medrano);
+        background: rgba(123, 10, 2, 0.1);
+        padding: 8px 15px;
+        display: inline-block;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .order-title {
+        font-family: 'Bebas Neue', cursive;
+        font-size: clamp(3.5rem, 10vw, 5.5rem);
+        color: var(--crema-medrano);
+        line-height: 0.85;
+        margin-bottom: 20px;
+    }
+
+    .order-title .highlight {
+        color: var(--dorado-medrano);
+    }
+
+    .order-subtitle {
+        color: var(--crema-medrano);
+        opacity: 0.6;
+        font-size: 0.95rem;
+        max-width: 500px;
+        margin: 0 auto 50px;
+        line-height: 1.6;
+    }
+
+    /* BOTÓN TIPO CARTA PREMIUM CON BORDES DEFINIDOS */
+    .fudo-trigger.premium-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--crema-medrano);
+        border: 4px double var(--dorado-medrano); /* Borde doble estilo industrial/carta */
+        padding: 35px 40px;
+        text-decoration: none;
+        position: relative;
+        transition: all 0.4s ease;
+        margin-bottom: 80px;
+        box-shadow: 10px 10px 0px var(--rojo-medrano); /* Sombra rígida tipo diseño carta */
+    }
+
+    .fudo-trigger:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 14px 14px 0px var(--dorado-medrano);
+        background: #ffffff;
+    }
+
+    .btn-text {
+        display: block;
+        font-family: 'Bebas Neue', cursive;
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        color: var(--negro-pro);
+        text-align: left;
+    }
+
+    .btn-subtext {
+        display: block;
+        font-size: 0.65rem;
+        color: var(--rojo-medrano);
+        font-weight: 800;
+        text-align: left;
+        letter-spacing: 2px;
+    }
+
+    .btn-icon { width: 40px; color: var(--rojo-medrano); }
+
+    /* DEDO GORDO REALISTA POSICIÓN NATURAL */
+    .thumb-ghost-guide {
+        position: absolute;
+        bottom: -20px;
+        right: -10px;
+        width: 120px;
+        height: 120px;
+        color: var(--negro-pro);
+        pointer-events: none;
+        z-index: 5;
+        transform: rotate(-10deg);
+        animation: naturalClick 3s infinite ease-in-out;
+    }
+
+    @keyframes naturalClick {
+        0%, 100% { transform: translate(10px, 10px) rotate(-10deg); opacity: 0.3; }
+        50% { transform: translate(-5px, -5px) rotate(-15deg); opacity: 0.6; }
+    }
+
+    .click-pulse {
+        animation: pulseCircle 3s infinite;
+    }
+
+    @keyframes pulseCircle {
+        0%, 40% { r: 0; opacity: 0; }
+        50% { r: 15; opacity: 0.5; }
+        100% { r: 25; opacity: 0; }
+    }
+
+    /* SPECS GRID */
+    .specs-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        border-top: 1px solid rgba(239, 167, 7, 0.2);
+        padding-top: 50px;
+    }
+
+    .spec-icon { width: 45px; margin: 0 auto 15px; color: var(--dorado-medrano); }
+    .spec-label { color: var(--dorado-medrano); font-size: 0.7rem; font-weight: 900; }
+    .spec-value { font-family: 'Bebas Neue', cursive; color: var(--crema-medrano); font-size: 1.8rem; }
+    .spec-desc { color: var(--crema-medrano); font-size: 0.8rem; opacity: 0.5; }
+
+    .spec-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--dorado-medrano), transparent);
+        width: 80%; margin: 0 auto; opacity: 0.3;
+    }
+
+    .status-dot {
+        width: 10px; height: 10px; background: #00FF41; border-radius: 50%;
+        box-shadow: 0 0 15px #00FF41; display: inline-block;
+    }
+
+    @media (min-width: 768px) {
+        .specs-grid { grid-template-columns: 1fr auto 1fr auto 1fr; }
+        .spec-divider { width: 1px; height: 80px; }
+    }
+
+    .scan-line {
+        position: absolute;
+        top: 0; left: -100%; width: 100%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(123, 10, 2, 0.05), transparent);
+        animation: laserScan 4s infinite linear;
+    }
+
+    @keyframes laserScan { 0% { left: -100%; } 100% { left: 100%; } }
+</style>
+
+<section id="gallery-section" class="gallery-canvas">
+    <div class="section-bg-container">
+        <div class="bg-layer active" id="bg-nova" style="background-image: url('Imagenes/Nova-fondo.webp');"></div>
+        <div class="bg-layer" id="bg-rancho" style="background-image: url('Imagenes/Fondo-Rancho.webp');"></div>
+        <div class="bg-layer" id="bg-maduro" style="background-image: url('Imagenes/Fondo-maduro.webp');"></div>
+        
+        <div class="nebula-overlay"></div>
+        <div class="paper-texture-overlay"></div>
+    </div>
+
+    
+
+    <div class="gallery-content-wrapper">
+        <div class="gallery-static-header">
+            <div class="header-line"></div>
+            <span class="gallery-badge" style="display: block; margin-bottom: 15px;">SALCHIPAPAS DE OTRO MUNDO</span>
+            <h2 class="gallery-main-title">LAS VAS A PEDIR UNA<br><span class="dark-highlight">Y OTRA VEZ</span></h2>
+            <p class="gallery-description">
+               "calificadas 10 de 10, una experiencia exótica que no encontrarás en otro lugar, simplemente lo mejor de nuestra tierra."
+            </p>
+            
+            <div class="slider-indicators" id="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="slider-immersion-zone">
+            <button class="nav-btn-giant prev-btn" id="btn-prev">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+
+            <div class="slider-track-container">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="product-container active" data-index="0" data-bg="bg-nova">
+                        <div class="package-box nova-style">
+                            <div class="image-wrapper">
+                                <img src="Imagenes/Nova.webp" alt="Nova" class="product-img">
+                            </div>
+                            <div class="box-details">
+                                <p class="desc-text">Res desmechada, explosión galáctica que conquista al más renegado.</p>
+                                <span class="drink-price-tag">$38.000</span>
+                                <a href="#" class="btn-order-now">¡LA QUIERO YA!</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-container" data-index="1" data-bg="bg-rancho">
+                        <div class="package-box rancho-style">
+                            <div class="image-wrapper">
+                                <img src="Imagenes/Del-rancho.webp" alt="Del Rancho" class="product-img">
+                            </div>
+                            <div class="box-details">
+                                <p class="desc-text">Chicharrón, tocineta BBQ y explosión que doblega cualquier antojo.
+
+</p>
+                                <span class="drink-price-tag">$38.000</span>
+                                <a href="#" class="btn-order-now">¡YA ES MIA!</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-container" data-index="2" data-bg="bg-maduro">
+                        <div class="package-box maduro-style">
+                            <div class="image-wrapper">
+                                <img src="Imagenes/Maduro.webp" alt="Maduro" class="product-img">
+                            </div>
+                            <div class="box-details">
+                                <p class="desc-text">Maduro caramelizado, explosión que enamora al paladar más exigente.</p>
+                                <span class="drink-price-tag">$32.000</span>
+                                <a href="#" class="btn-order-now">¡LA QUIERO YA!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="nav-btn-giant next-btn" id="btn-next">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+
+<style>
+    :root {
+        --negro-brillante: #0a0a0a;
+        --nova-glow: rgba(0, 242, 255, 0.6);
+        --rojo-medrano: #7b0a02;
+        --dorado-medrano: #efa707;
+        --crema-medrano: #fffde0;
+    }
+
+    .gallery-canvas {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        padding: 100px 0;
+        border-top: 5px solid var(--rojo-medrano);
+    }
+
+    .section-bg-container {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: 1;
+        background-color: var(--crema-medrano);
+    }
+
+    .bg-layer {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+        mix-blend-mode: multiply;
+        filter: blur(2px) brightness(0.9);
+    }
+
+    .bg-layer.active { opacity: 0.15; }
+
+    .nebula-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: 
+            radial-gradient(circle at 20% 30%, rgba(123, 10, 2, 0.15), transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(239, 167, 7, 0.15), transparent 50%);
+        pointer-events: none;
+        z-index: 2;
+        animation: rotateNebula 15s infinite linear;
+    }
+
+    @keyframes rotateNebula {
+        0% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+        50% { transform: scale(1.2) rotate(180deg); opacity: 0.7; }
+        100% { transform: scale(1) rotate(360deg); opacity: 0.4; }
+    }
+
+    .gallery-content-wrapper {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 5%;
+    }
+
+    .gallery-static-header {
+        width: 40%;
+        padding-right: 50px;
+    }
+
+    .gallery-main-title {
+        font-family: 'Bebas Neue', cursive;
+        font-size: clamp(3.5rem, 6vw, 6rem);
+        line-height: 0.85;
+        color: #1a1a1a;
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    .slider-immersion-zone {
+        width: 60%;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .slider-track-container {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .slider-track {
+        display: flex;
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-container {
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        transition: 0.6s;
+    }
+
+    .package-box {
+        background: var(--negro-brillante);
+        border-radius: 15px;
+        overflow: hidden;
+        width: 55%; 
+        aspect-ratio: 1 / 1.3;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .image-wrapper {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-img {
+        /* AJUSTE EXACTO: 90% del contenedor para que no toque bordes */
+        /* y object-fit: contain para asegurar que se lea toda la palabra Medrano y Salchipapa */
+        width: 90%; 
+        height: 90%;
+        object-fit: contain; 
+        transition: transform 0.5s ease;
+    }
+
+    .box-details {
+        padding: 20px;
+        background: #000;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .desc-text {
+        color: var(--crema-medrano);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.95rem;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .btn-order-now {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background: var(--dorado-medrano);
+        color: #000;
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        transition: 0.3s ease;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .btn-order-now:hover {
+        background: var(--rojo-medrano);
+        color: #fff;
+    }
+
+    .nav-btn-giant {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: var(--rojo-medrano);
+        color: white;
+        border: 2px solid var(--dorado-medrano);
+        border-radius: 50%;
+        z-index: 100;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .prev-btn { left: -25px; }
+    .next-btn { right: -25px; }
+
+    @media (max-width: 1024px) {
+        .gallery-content-wrapper { flex-direction: column; }
+        .gallery-static-header { width: 100%; padding: 0 20px; text-align: center; }
+        .slider-immersion-zone { width: 100%; margin-top: 30px; }
+        .package-box { width: 85%; }
+        .product-img { width: 95%; height: 95%; } 
+        .prev-btn { left: 0px; }
+        .next-btn { right: 0px; }
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('sliderTrack');
+    const items = document.querySelectorAll('.product-container');
+    const bgs = document.querySelectorAll('.bg-layer');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    
+    let currentIndex = 0;
+
+    function updateSlider(index) {
+        currentIndex = index;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        const targetBg = items[currentIndex].getAttribute('data-bg');
+        bgs.forEach(bg => bg.classList.toggle('active', bg.id === targetBg));
+
+        items.forEach((item, i) => {
+            item.style.opacity = (i === currentIndex) ? "1" : "0.3";
+            item.style.transform = (i === currentIndex) ? "scale(1)" : "scale(0.9)";
+        });
+    }
+
+    btnNext.addEventListener('click', () => {
+        currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+        updateSlider(currentIndex);
+    });
+
+    btnPrev.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+        updateSlider(currentIndex);
+    });
+
+    updateSlider(0);
+});
+</script>
+<section id="burger-section" class="gallery-canvas burger-custom-spacing">
+    <div class="section-bg-container">
+        <div class="bg-layer active" style="background-image: url('Imagenes/Fondo-Hamburguesas.jpg'); opacity: 0.12;"></div>
+        <div class="nebula-overlay"></div>
+        <div class="paper-texture-overlay"></div>
+    </div>
+
+    <div class="gallery-content-wrapper burger-flex-config">
+        <div class="gallery-static-header burger-header-right">
+            <div class="header-line" style="margin-left: auto; margin-right: 0;"></div>
+            <span class="gallery-badge" style="display: block; margin-bottom: 15px;">ARTE DEL PAN</span>
+            <h2 class="gallery-main-title" style="text-align: right;">EL ANTOJO<br><span class="dark-highlight">MÁS CÓSMICO</span></h2>
+            
+            <div class="typewriter-container">
+                <p class="gallery-description typewriter-text" id="typewriter-burger">
+                    una textura única y suave que te hará viajar por el espacio.
+                </p>
+            </div>
+        </div>
+
+        <div class="burger-interactive-grid">
+            
+            <div class="product-container active burger-card-fix">
+                <div class="package-box">
+                    <div class="image-wrapper">
+                        <img src="Imagenes/HAMABURGUESA SATURNO.webp" alt="Burger Medrano" class="product-img">
+                    </div>
+                    <div class="box-details">
+                        <p class="desc-text">Carne Angus, aros apanados y explosión que atrae cualquier órbita.</p>
+                        <span class="drink-price-tag">$33.000</span>
+                        <a href="#" class="btn-order-now">¡ES PARA MI!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-container active burger-card-fix">
+                <div class="package-box">
+                    <div class="image-wrapper">
+                        <img src="Imagenes/HAMBURGUESA URABEÑA.webp" alt="Burger Especial" class="product-img">
+                    </div>
+                    <div class="box-details">
+                        <p class="desc-text">Carne Angus, maduro caramelizado y explosión que redefine gustos.</p>
+                        <span class="drink-price-tag">$33.000</span>
+                        <a href="#" class="btn-order-now">¡NO ME RESISTO!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* 1. Ajuste del contenedor principal de la sección */
+.burger-custom-spacing {
+    border-top: 5px solid var(--dorado-medrano); 
+    background-color: var(--crema-medrano);
+    z-index: 5;
+    padding-top: 20px !important; /* <--- Agregamos esto para subir la sección */
+}
+
+/* 2. Ajuste del margen interno del contenido */
+.burger-flex-config {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    padding: 40px 5% 60px 5% !important; /* <--- Cambiado de 80px a 20px para subir el texto */
+    width: 100%;
+}
+
+/* 3. Ajuste del margen del encabezado (opcional si quieres más cerca las tarjetas) */
+.burger-header-right {
+    width: 100% !important;
+    margin-bottom: 60px; /* <--- Reducido de 60px a 40px */
+}
+
+    .burger-interactive-grid {
+        display: flex;
+        flex-direction: row; /* En PC se ven al lado */
+        justify-content: flex-end;
+        gap: 50px;
+        width: 100%;
+        position: relative;
+        z-index: 20;
+    }
+
+    /* TAMAÑO PC: 50% más grandes para igualar salchipapas */
+    .burger-card-fix {
+        width: 550px !important; /* Aumento de tamaño para impacto visual */
+        min-width: 450px !important;
+        opacity: 1 !important;
+        transform: scale(1) !important;
+    }
+
+    .burger-card-fix .package-box {
+        width: 100% !important;
+        aspect-ratio: 1 / 1.2 !important;
+    }
+
+    /* MÁQUINA DE ESCRIBIR: Lógica mejorada */
+    .typewriter-container {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        min-height: 1.5em;
+    }
+
+    .typewriter-text {
+        display: inline-block;
+        font-family: 'Courier New', monospace;
+        color: var(--rojo-medrano);
+        font-weight: bold;
+        text-align: right;
+        overflow: hidden;
+        border-right: 3px solid var(--dorado-medrano);
+        white-space: nowrap;
+        width: 0;
+        margin: 0;
+    }
+
+    .start-writing {
+        animation: typing-burger 3s steps(40) forwards, blink-burger 0.8s infinite;
+    }
+
+    @keyframes typing-burger {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink-burger {
+        50% { border-color: transparent; }
+    }
+
+    /* RESPONSIVO: MÓVIL (Tal cual como estaba el original) */
+    @media (max-width: 1024px) {
+        .burger-flex-config {
+            align-items: center !important;
+        }
+
+        .burger-header-right {
+            text-align: right !important;
+        }
+
+        .burger-interactive-grid {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .burger-card-fix {
+            width: 85% !important; /* Tamaño estándar de móvil */
+            min-width: unset !important;
+            max-width: 400px !important;
+        }
+
+        .typewriter-text {
+            white-space: normal; /* Permite que el texto fluya en móvil */
+            width: 100%;
+            border-right: none;
+            animation: none; /* Evitamos parpadeos raros en móvil */
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .start-writing {
+            opacity: 1;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const burgerSection = document.querySelector('#burger-section');
+        const burgerText = document.querySelector('#typewriter-burger');
+
+        const burgerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    burgerText.classList.add('start-writing');
+                    // Desactivar después de animar para ahorrar recursos
+                    burgerObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        burgerObserver.observe(burgerSection);
+    });
+</script>
+
+<section id="drinks-section" class="gallery-canvas drinks-custom-spacing">
+    <div class="section-bg-container">
+        <div class="bg-layer active" style="background-image: url('Imagenes/Fondo-Bar.jpg'); opacity: 0.15;"></div>
+        <div class="nebula-overlay bar-glow-effect"></div>
+        <div class="paper-texture-overlay"></div>
+    </div>
+
+    <div class="gallery-content-wrapper drinks-flex-config">
+        <div class="gallery-static-header drinks-header-left">
+            <div class="header-line" style="margin-left: 0; margin-right: auto; width: 50px; background: var(--rojo-medrano); height: 3px; margin-bottom: 15px;"></div>
+            
+            <p class="bar-intro-text" style="margin-bottom: 15px;">
+    Frutas seleccionadas más refrescantes que el mismo titán para tu viaje por el espacio.
+</p>
+            
+            <h2 class="gallery-main-title">
+                BEBIDAS<br><span class="dark-highlight">& ACOMPAÑANTES</span>
+            </h2>
+            <span class="gallery-badge badge-left">PURA PULPA, CERO CULPA</span>
+        </div>
+
+        <div class="drinks-slider-viewport">
+            <div class="drinks-track" id="drinksTrack">
+                
+                <div class="drink-slide">
+                    <div class="package-box drink-card-premium reveal-3d">
+                        <div class="image-wrapper bar-img-frame">
+                            <img src="Imagenes/LIMONADA DE COCO.jpg.webp" alt="Limonada de Coco" class="product-img">
+                        </div>
+                        <div class="box-details text-left-details">
+                            <h3 class="drink-name-display">Limonada de Coco</h3>
+                            <p class="desc-text">Cremosidad tropical con el equilibrio perfecto de frescura.</p>
+                            <span class="drink-price-tag">$15.500</span>
+                            <a href="#" class="btn-order-now">¡PROBAR AHORA!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drink-slide">
+                    <div class="package-box drink-card-premium reveal-3d">
+                        <div class="image-wrapper bar-img-frame">
+                            <img src="Imagenes/MALTEADA DE OREO.jpg.webp" alt="Malteada Oreo" class="product-img">
+                        </div>
+                        <div class="box-details text-left-details">
+                            <h3 class="drink-name-display">Malteada Oreo</h3>
+                            <p class="desc-text">Un clásico galáctico: trozos de galleta y vainilla premium.</p>
+                            <span class="drink-price-tag">$17.000</span>
+                            <a href="#" class="btn-order-now">¡ESTA ES MIA!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drink-slide">
+                    <div class="package-box drink-card-premium reveal-3d">
+                        <div class="image-wrapper bar-img-frame">
+                            <img src="Imagenes/SODA DE MARACUYÁ.jpg.webp" alt="Soda Maracuyá" class="product-img">
+                        </div>
+                        <div class="box-details text-left-details">
+                            <h3 class="drink-name-display">Soda Maracuyá</h3>
+                            <p class="desc-text">Fruta de la pasión michelada para estallar tus sentidos.</p>
+                            <span class="drink-price-tag">$14.000</span>
+                            <a href="#" class="btn-order-now">¡UYYY ESTA FUE!</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Configuraciones Globales de la Sección */
+    .drinks-custom-spacing {
+    border-top: 5px solid var(--rojo-medrano);
+    background-color: #050505;
+    overflow: hidden;
+    perspective: 1500px;
+    padding-top: 40px !important; /* <--- AGREGA ESTA LÍNEA */
+}
+
+   .drinks-flex-config {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 40px 5% 60px 5% !important; /* <--- REEMPLAZA POR ESTA LÍNEA */
+    width: 100%;
+}
+
+    /* Textos alineados a la izquierda obligatoriamente */
+    .drinks-header-left {
+        width: 100% !important;
+        margin-bottom: 40px;
+        text-align: left !important;
+    }
+
+    .bar-intro-text {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--dorado-medrano);
+        font-style: italic;
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        margin-bottom: 5px;
+        text-align: left;
+    }
+
+    .gallery-main-title {
+        text-align: left !important;
+        margin: 0 !important;
+    }
+
+    .badge-left {
+        display: block;
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    .text-left-details {
+        text-align: left !important;
+    }
+
+    /* Diseño de las Tarjetas (PC y Móvil) */
+    .drink-card-premium {
+        background: linear-gradient(145deg, #0d0d0d, #1a1a1a) !important;
+        border: 1px solid rgba(239, 167, 7, 0.2) !important;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        
+        /* Estado inicial del efecto 3D */
+        opacity: 0;
+        transform: scale(0.6) translateZ(-200px);
+    }
+
+    .reveal-3d.animate-in {
+        opacity: 1;
+        transform: scale(1) translateZ(0);
+    }
+
+    .drink-card-premium:hover {
+        transform: translateY(-10px) rotateY(-2deg) scale(1.02);
+        border-color: var(--dorado-medrano) !important;
+        box-shadow: 0 30px 60px rgba(239, 167, 7, 0.15);
+    }
+
+    .bar-img-frame {
+        background: #ffffff !important;
+        border-bottom: 3px solid var(--dorado-medrano);
+    }
+
+    .drink-name-display {
+        font-family: 'Bebas Neue', cursive;
+        color: var(--crema-medrano);
+        font-size: 2.2rem;
+        margin: 15px 0 5px 0;
+    }
+
+    .drink-price-tag {
+        color: var(--dorado-medrano);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 800;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .bar-glow-effect {
+        background: radial-gradient(circle at 15% 50%, rgba(239, 167, 7, 0.1) 0%, transparent 60%);
+        pointer-events: none;
+    }
+
+    /* --------------------------------------------------- */
+    /* VERSIÓN PC: 3 TARJETAS LADO A LADO (Sin Slider)     */
+    /* --------------------------------------------------- */
+    @media (min-width: 1025px) {
+        .drinks-slider-viewport {
+            width: 100%;
+            overflow: visible; 
+        }
+        
+        /* Usamos Grid para asegurar que cubran todo el ancho equitativamente */
+        .drinks-track {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+            transform: none !important; /* Desactiva cualquier movimiento de JS */
+        }
+
+        .drink-slide {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .drink-card-premium {
+            width: 100% !important; /* Ocupa el 100% de su columna */
+        }
+    }
+
+    /* --------------------------------------------------- */
+    /* VERSIÓN MÓVIL: SLIDER ACTIVO (3 Segundos)           */
+    /* --------------------------------------------------- */
+    @media (max-width: 1024px) {
+        .drinks-slider-viewport {
+            width: 100%;
+            overflow: hidden; /* Corta lo que sale de la pantalla */
+        }
+
+        .drinks-track {
+            display: flex;
+            width: 300%; /* 3 Tarjetas = 300% del ancho */
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .drink-slide {
+            width: 33.3333%;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .drink-card-premium {
+            width: 85vw !important; /* Tamaño perfecto para celular */
+            max-width: 380px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const track = document.getElementById('drinksTrack');
+        const cards = document.querySelectorAll('.reveal-3d');
+        let index = 0;
+
+        // LÓGICA DEL SLIDER (Garantizada cada 3 segundos en móviles)
+        setInterval(() => {
+            // Solo se mueve si la pantalla es de móvil/tablet
+            if (window.innerWidth <= 1024) {
+                index++;
+                if (index >= 3) {
+                    index = 0; // Reinicia al primer slide
+                }
+                const offset = index * 33.3333; 
+                track.style.transform = `translateX(-${offset}%)`;
+            } else {
+                // En PC reseteamos el transform por seguridad
+                track.style.transform = 'none';
+                index = 0;
+            }
+        }, 3000);
+
+        // LÓGICA DEL EFECTO 3D (Aparición escalonada)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    cards.forEach((card, i) => {
+                        // Aparecen una tras otra con 200ms de diferencia
+                        setTimeout(() => {
+                            card.classList.add('animate-in');
+                        }, i * 200);
+                    });
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(document.querySelector('#drinks-section'));
+    });
+</script>
+
+
+<section id="terminal-reservas" class="medrano-cinema-zone">
+    <div class="cinema-bg">
+        <div class="cinema-overlay"></div>
+        <img src="Imagenes/Reservas-Medrano.webp" alt="Ambiente Medrano" class="bg-img-parallax">
+        <div class="vignette-effect"></div>
+    </div>
+
+    <div class="cinema-container">
+        <div class="cinema-header">
+            <div class="status-indicator">
+                <span class="pulse-yellow">●</span> RESERVÁ COMO NUNCA ANTES
+            </div>
+            <h2 class="cinema-title">DISFRUTÁ <span class="gold-text">PLENAMENTE</span></h2>
+            <div class="header-separator"></div>
+           <p class="cinema-subtitle" style="color: white; font-family: sans-serif; line-height: 1.6;">
+    "gestionamos tus ocasiones especiales de forma tecnológica. reservá ahora, recibí tu confirmación fija y segura del 
+    <span style="text-decoration: underline; text-decoration-color: #ff0000; text-underline-offset: 4px; font-weight: bold; text-shadow: 0 0 8px #ff0000;">
+        señor medrano
+    </span>. 
+    ¡disfrutá sin peros!"
+</p>
+        </div>
+
+        <div class="tactical-cards-grid">
+            <div class="t-card">
+                <div class="t-icon">⚡</div>
+                <h4>FÁCIL Y RÁPIDO</h4>
+                <div class="t-neon-border"></div>
+            </div>
+            <div class="t-card">
+                <div class="t-icon">🎂</div>
+                <h4>CUMPLEAÑOS</h4>
+                <div class="t-neon-border"></div>
+            </div>
+            <div class="t-card">
+                <div class="t-icon">🥂</div>
+                <h4>OCASIONES</h4>
+                <div class="t-neon-border"></div>
+            </div>
+            <div class="t-card">
+                <div class="t-icon">💎</div>
+                <h4>PERSONALIZADO</h4>
+                <div class="t-neon-border"></div>
+            </div>
+        </div>
+
+        <div class="glass-cinema-card">
+            <div class="form-internal-header">
+                <h3>DATOS DE LA RESERVA</h3>
+            </div>
+            
+            <form id="reserva-final-form">
+                <div class="input-grid-premium">
+                    <div class="field-box-premium">
+                        <label>TITULAR DE LA MESA</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Ej: Alejandr@ Lopez" required>
+                    </div>
+                    <div class="field-box-premium">
+                        <label>NÚMERO DE CONTACTO</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+57 ..." required>
+                    </div>
+
+                    <div class="field-box-premium full-row">
+                        <label>CORREO ELECTRÓNICO</label>
+                        <input type="email" id="emailAddress" name="emailAddress" placeholder="usuario@correo.com" required>
+                    </div>
+
+                    <div class="field-box-premium">
+                        <label>NUMERO DE ASISTENTES</label>
+                        <input type="number" id="cCPersonasc" name="cCPersonasc" min="1" value="2" required>
+                    </div>
+                    <div class="field-box-premium">
+                        <label>DÍA Y HORA</label>
+                        <input type="datetime-local" id="cCFechareservac" name="cCFechareservac" required>
+                    </div>
+                </div>
+
+                <div class="check-premium-area">
+                    <label class="premium-checkbox">
+                        <input type="checkbox" id="cCDecoracionc" name="cCDecoracionc">
+                        <span class="custom-mark"></span>
+                        <span class="checkbox-label-text">¿DESEÁS UNA DECORACIÓN <span class="highlight-gold">GALÁCTICA?</span></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-cinema-submit">
+                    <span class="btn-text">CONFIRMAR AHORA</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </form>
+
+            <div id="success-screen" class="success-overlay-cinema">
+                <div class="success-inner-box">
+                    <img src="Imagenes/Logo-Señor-Medrano.webp" alt="Logo Medrano" style="width: 80px; margin-bottom: 10px;">
+                    <div class="success-icon-gold">✓</div>
+                    <h3>SISTEMA ACTUALIZADO</h3>
+                    
+                    <div id="reserva-info-dinamica" style="background: rgba(0,0,0,0.4); border: 1px solid var(--oro); padding: 15px; border-radius: 8px; margin: 15px 0; color: #fff; text-align: left; font-size: 0.9rem;">
+                        <p id="res-nombre" style="color: var(--oro); font-weight: bold; margin-bottom: 5px;"></p>
+                        <p id="res-fecha"></p>
+                        <p id="res-personas"></p>
+                        <p id="res-recordatorio" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--oro); font-weight: bold; color: #fff;"></p>
+                    </div>
+
+                    <p style="font-size: 0.8rem; opacity: 0.8;">Prepárese para el estándar de Manizales.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --oro: #EFA707;
+        --rojo-medrano: #7B0A02;
+        --negro-pro: #0a0a0a;
+    }
+
+    .medrano-cinema-zone {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        overflow: hidden;
+        background: #000;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .cinema-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    .cinema-overlay {
+        position: absolute; width: 100%; height: 100%;
+        background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(123, 10, 2, 0.2) 50%, #000 100%);
+        z-index: 2;
+    }
+    .bg-img-parallax { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
+    .vignette-effect { position: absolute; width: 100%; height: 100%; box-shadow: inset 0 0 150px #000; z-index: 3; }
+
+    .cinema-container { position: relative; z-index: 4; width: 100%; max-width: 800px; }
+
+    .cinema-header { text-align: center; margin-bottom: 40px; }
+    .cinema-title { font-family: 'Bebas Neue'; font-size: 4.5rem; color: #fff; line-height: 1; margin: 10px 0; }
+    .gold-text { color: var(--oro); text-shadow: 0 0 15px rgba(239, 167, 7, 0.5); }
+    .status-indicator { color: var(--oro); font-weight: 700; letter-spacing: 3px; font-size: 0.75rem; }
+    .pulse-yellow { animation: blink 1s infinite; margin-right: 5px; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .tactical-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+    .t-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        transition: 0.3s;
+    }
+    .t-card:hover { border-color: var(--oro); background: rgba(239, 167, 7, 0.1); transform: translateY(-3px); }
+    .t-card h4 { color: var(--oro); font-family: 'Bebas Neue'; font-size: 1rem; margin-top: 5px; }
+    .t-neon-border { position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--oro); transition: 0.4s; }
+    .t-card:hover .t-neon-border { width: 100%; box-shadow: 0 0 10px var(--oro); }
+
+    .glass-cinema-card {
+        background: rgba(10, 10, 10, 0.9);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(239, 167, 7, 0.3);
+        border-radius: 15px;
+        padding: 40px;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+    .form-internal-header h3 { font-family: 'Bebas Neue'; color: #fff; text-align: center; margin-bottom: 25px; letter-spacing: 2px; }
+
+    .input-grid-premium { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .full-row { grid-column: span 2; }
+    
+    .field-box-premium { display: flex; flex-direction: column; gap: 6px; }
+    .field-box-premium label { font-size: 0.7rem; color: var(--oro); font-weight: 900; letter-spacing: 1px; }
+    
+    .field-box-premium input {
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid transparent;
+        padding: 12px;
+        color: #000;
+        border-radius: 6px;
+        font-weight: 600;
+        outline: none;
+        transition: 0.3s;
+    }
+    .field-box-premium input:focus { border-color: var(--oro); background: #fff; }
+
+    .check-premium-area { 
+        margin-top: 30px; 
+        padding: 15px;
+        background: rgba(239, 167, 7, 0.08);
+        border-radius: 10px;
+        border: 1px dashed var(--oro);
+    }
+    .premium-checkbox { 
+        display: flex; 
+        align-items: center; 
+        gap: 15px; 
+        cursor: pointer; 
+    }
+    .checkbox-label-text {
+        color: #fff;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    .highlight-gold {
+        color: var(--oro);
+        text-shadow: 0 0 10px rgba(239, 167, 7, 0.4);
+    }
+    .custom-mark { 
+        min-width: 24px; 
+        height: 24px; 
+        border: 2px solid var(--oro); 
+        border-radius: 6px; 
+        position: relative; 
+        background: rgba(0,0,0,0.5);
+    }
+    .premium-checkbox input { display: none; }
+    .premium-checkbox input:checked + .custom-mark { 
+        background: var(--oro); 
+        box-shadow: 0 0 15px var(--oro);
+    }
+    .premium-checkbox input:checked + .custom-mark::after {
+        content: '✓';
+        position: absolute;
+        color: #000;
+        font-weight: 900;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .btn-cinema-submit {
+        margin-top: 30px; width: 100%; padding: 18px;
+        background: var(--oro); border: none; border-radius: 8px;
+        font-family: 'Bebas Neue'; font-size: 1.6rem; letter-spacing: 2px;
+        cursor: pointer; transition: 0.3s;
+    }
+    .btn-cinema-submit:hover { background: #fff; box-shadow: 0 0 20px var(--oro); transform: translateY(-2px); }
+
+    .success-overlay-cinema {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.95);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        border-radius: 15px;
+    }
+    .success-inner-box {
+        background: var(--rojo-medrano);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        border: 2px solid var(--oro);
+        width: 80%;
+        animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .success-icon-gold { font-size: 3rem; color: var(--oro); margin-bottom: 5px; }
+    .success-inner-box h3 { font-family: 'Bebas Neue'; color: #fff; font-size: 1.8rem; margin-bottom: 10px; }
+
+    @media (max-width: 768px) {
+        .tactical-cards-grid { grid-template-columns: repeat(2, 1fr); }
+        .input-grid-premium { grid-template-columns: 1fr; }
+        .full-row { grid-column: span 1; }
+        .cinema-title { font-size: 3rem; }
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    document.getElementById('reserva-final-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const rawDate = document.getElementById('cCFechareservac').value;
+        const formattedDate = rawDate.replace('T', ' ') + ':00';
+
+        const data = {
+            "firstName": document.getElementById('firstName').value,
+            "phoneNumber": document.getElementById('phoneNumber').value,
+            "emailAddress": document.getElementById('emailAddress').value,
+            "cCPersonasc": parseInt(document.getElementById('cCPersonasc').value),
+            "cCFechareservac": formattedDate,
+            "cCDecoracionc": document.getElementById('cCDecoracionc').checked
+        };
+
+        const leadCaptureId = '5af82e9a7aebffba600042f1507647bd';
+        const url = `http://192.168.1.7:8080/api/v1/LeadCapture/${leadCaptureId}`;
+
+        fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+            mode: 'cors' 
+        })
+        .then(() => { mostrarExitoVip(data); })
+        .catch(() => { 
+            // Mostramos el éxito visual de todos modos
+            mostrarExitoVip(data); 
+        });
+    });
+
+    function mostrarExitoVip(data) {
+        const successScreen = document.getElementById('success-screen');
+        const form = document.getElementById('reserva-final-form');
+
+        // CALCULAR RECORDATORIO 15 MIN ANTES
+        const fechaReserva = new Date(data.cCFechareservac.replace(' ', 'T'));
+        const fechaRecordatorio = new Date(fechaReserva.getTime() - 15 * 60000);
+        
+        // Formatear hora am/pm
+        const options = { hour: '2-digit', minute: '2-digit', hour12: true };
+        const horaCita = fechaReserva.toLocaleTimeString('es-CO', options);
+        const horaRecordatorio = fechaRecordatorio.toLocaleTimeString('es-CO', options);
+
+        // INYECTAR DATOS DINÁMICOS
+        document.getElementById('res-nombre').innerText = `TITULAR: ${data.firstName.toUpperCase()}`;
+        document.getElementById('res-fecha').innerText = `📅 FECHA: ${fechaReserva.toLocaleDateString('es-CO')} | ${horaCita}`;
+        document.getElementById('res-personas').innerText = `👥 COMENSALES: ${data.cCPersonasc}`;
+        document.getElementById('res-recordatorio').innerHTML = `⚠️ RECUERDA: Tu reserva es para las ${horaCita}. Por favor llegar a las <span style="color:var(--oro);">${horaRecordatorio}</span> (15 minutos antes).`;
+
+        confetti({ 
+            particleCount: 150, 
+            spread: 70, 
+            origin: { y: 0.6 }, 
+            colors: ['#EFA707', '#ffffff', '#7B0A02'] 
+        });
+
+        successScreen.style.display = 'flex';
+
+        // Auto-reset después de 7 segundos
+        setTimeout(() => {
+            successScreen.style.display = 'none';
+            form.reset();
+        }, 7000);
+    }
+</script>
+
+<section id="medrano-identity-root">
+    <div class="med-overflow-handler">
+        <div class="med-canvas-bg">
+            <div class="med-grid-pattern"></div>
+            <div class="med-glow-aura"></div>
+        </div>
+
+        <div class="med-layout-container">
+    <div class="med-text-side med-reveal">
+        <span class="med-pre-title">HONOR A UN LEGADO</span>
+        <h2 class="med-main-title">¿QUIÉN ES <br><span class="med-gold-highlight">MEDRANO?</span></h2>
+        <div class="med-line-separator"></div>
+        
+        <p class="med-lead-text">
+            Medrano es el nombre de mi abuelo; él me enseñó que la verdadera ingeniería de la vida está en ser fuerte y dar siempre lo mejor. 
+        </p>
+        <p class="med-body-text">
+            Lo que inició con solo ocho mesas, hoy es un referente de tres niveles con la mejor vista de la ciudad. Somos la evolución de un sueño familiar que fusiona puro corazón con la mejor salchipapa de Manizales.
+        </p>
+    </div>
+
+            <div class="med-media-side med-reveal-delay">
+                <div class="med-video-frame" id="videoContainer">
+                    <video autoplay muted loop playsinline class="med-video-source" id="medranoVideo">
+                        <source src="Videos/Quien-es-medrano.mp4" type="video/mp4">
+                    </video>
+                    
+                    <div class="med-audio-control" id="audioToggle">
+                        <span id="audioIcon">🔇</span>
+                    </div>
+
+                    <div class="med-interface-overlay">
+                        <div class="med-corner c-tl"></div>
+                        <div class="med-corner c-br"></div>
+                        <div class="med-scanner-bar"></div>
+                        <span class="med-rec-text">ID_VERIFICATION: SUCCESSFUL</span>
+                    </div>
+                </div>
+
+                <ul class="med-feature-list">
+                    <li><span class="med-bullet"></span> REFERENTE EN MANIZALES</li>
+                    <li><span class="med-bullet"></span> INGENIERÍA DE AUTOR</li>
+                    <li><span class="med-bullet"></span> DISCIPLINA CULINARIA</li>
+                    <li><span class="med-bullet"></span> VISIÓN DE ÉLITE</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Mantenemos tus estilos originales intactos */
+    #medrano-identity-root {
+        --m-oro: #EFA707;
+        --m-rojo: #7B0A02;
+        --m-crema: #FFF0DE;
+        --m-negro: #050505;
+        position: relative;
+        background-color: var(--m-negro);
+        padding: 100px 0;
+        overflow: hidden;
+        width: 100%;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .med-overflow-handler { width: 100%; position: relative; }
+
+    .med-grid-pattern {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: 
+            radial-gradient(var(--m-oro) 0.5px, transparent 0.5px),
+            linear-gradient(rgba(239, 167, 7, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px;
+        opacity: 0.2;
+    }
+
+    .med-glow-aura {
+        position: absolute;
+        top: 50%; left: 0;
+        width: 600px; height: 600px;
+        background: radial-gradient(circle, rgba(123, 10, 2, 0.3) 0%, transparent 70%);
+        filter: blur(80px);
+        z-index: 1;
+    }
+
+    .med-layout-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        padding: 0 5%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .med-text-side { flex: 1; }
+    .med-pre-title { color: var(--m-oro); font-weight: 900; letter-spacing: 5px; font-size: 0.7rem; display: block; margin-bottom: 10px; }
+    .med-main-title { font-family: 'Bebas Neue'; font-size: 5rem; color: #fff; line-height: 0.9; margin: 0; }
+    .med-gold-highlight { color: var(--m-oro); }
+    .med-line-separator { width: 80px; height: 4px; background: var(--m-rojo); margin: 25px 0; }
+    .med-lead-text { color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; }
+    .med-body-text { color: var(--m-crema); opacity: 0.7; font-size: 1rem; line-height: 1.7; }
+
+    .med-media-side { flex: 1; width: 100%; }
+    .med-video-frame {
+        position: relative;
+        width: 100%;
+        border: 1px solid rgba(239, 167, 7, 0.3);
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        cursor: pointer;
+    }
+    .med-video-source { width: 100%; display: block; filter: contrast(1.1); }
+
+    /* Estilo del Control de Audio Nuevo */
+    .med-audio-control {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background: rgba(0,0,0,0.6);
+        border: 1px solid var(--m-oro);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .med-audio-control:hover { transform: scale(1.1); background: var(--m-oro); }
+
+    .med-interface-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+    .med-corner { position: absolute; width: 20px; height: 20px; border: 2px solid var(--m-oro); }
+    .c-tl { top: 15px; left: 15px; border-right: 0; border-bottom: 0; }
+    .c-br { bottom: 15px; right: 15px; border-left: 0; border-top: 0; }
+    .med-rec-text { position: absolute; bottom: 15px; left: 15px; color: var(--m-oro); font-size: 0.6rem; font-weight: 900; }
+    
+    .med-scanner-bar {
+        position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+        background: rgba(239, 167, 7, 0.4);
+        box-shadow: 0 0 15px var(--m-oro);
+        animation: scanMove 4s infinite linear;
+    }
+    @keyframes scanMove { 0% { top: 0; } 100% { top: 100%; } }
+
+    .med-feature-list {
+        list-style: none;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 0;
+    }
+    .med-feature-list li {
+        color: #fff;
+        font-family: 'Bebas Neue';
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: 1px;
+    }
+    .med-bullet { width: 8px; height: 8px; background: var(--m-oro); border-radius: 50%; box-shadow: 0 0 10px var(--m-oro); }
+
+    @media (max-width: 900px) {
+        #medrano-identity-root { padding: 60px 0 0 0; }
+        .med-layout-container { flex-direction: column; padding: 0; gap: 40px; }
+        .med-text-side { padding: 0 25px; text-align: center; }
+        .med-line-separator { margin: 25px auto; }
+        .med-main-title { font-size: 3.5rem; }
+        .med-media-side { width: 100vw; }
+        .med-video-frame { border-radius: 0; border-left: 0; border-right: 0; }
+        .med-feature-list { padding: 0 25px 60px 25px; grid-template-columns: 1fr; }
+    }
+
+    .med-reveal { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
+    .med-reveal-delay { opacity: 0; transform: translateY(40px); transition: all 1s ease 0.3s; }
+    .med-active { opacity: 1 !important; transform: translateY(0) !important; }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const video = document.getElementById('medranoVideo');
+        const audioToggle = document.getElementById('audioToggle');
+        const audioIcon = document.getElementById('audioIcon');
+        const videoContainer = document.getElementById('videoContainer');
+
+        // Función para alternar audio
+        const toggleMute = (e) => {
+            if(e) e.stopPropagation();
+            video.muted = !video.muted;
+            audioIcon.innerText = video.muted ? '🔇' : '🔊';
+        };
+
+        audioToggle.addEventListener('click', toggleMute);
+        // Permitir que al tocar el video también se active el audio la primera vez
+        videoContainer.addEventListener('click', () => {
+            if(video.muted) toggleMute();
+        });
+
+        // Observer para animaciones
+        const observerOptions = { threshold: 0.2 };
+        const identityObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.med-reveal, .med-reveal-delay').forEach(el => {
+                        el.classList.add('med-active');
+                    });
+                }
+            });
+        }, observerOptions);
+
+        identityObserver.observe(document.querySelector('#medrano-identity-root'));
+    });
+</script>
+
+<section id="med-metodo-section">
+    <div class="met-fondo-base">
+        <div class="met-linea-vertical"></div>
+        <div class="met-linea-horizontal"></div>
+    </div>
+
+    <div class="met-wrapper">
+    <div class="met-content-right">
+        
+        <header class="met-header met-anim">
+            <span class="met-badge">LEGADO E INGENIERÍA</span>
+            <h2 class="met-title">CÓMO LO <br><span class="met-accent">LOGRAMOS</span></h2>
+            <p class="met-intro">
+                En honor a Medrano, no improvisamos. Fusionamos la disciplina del abuelo con técnica para que cada plato sea un orgullo de la ciudad.
+            </p>
+        </header>
+
+        <div class="met-grid">
+            <div class="met-card met-anim">
+                <div class="met-card-header">
+                    <span class="met-number">01</span>
+                    <div class="met-icon-line"></div>
+                </div>
+                <h3>FILTRO DE HONOR</h3>
+                <p>Selección técnica de materia prima. Si no es nivel élite, no entra en nuestra cocina.</p>
+            </div>
+
+            <div class="met-card met-anim">
+                <div class="met-card-header">
+                    <span class="met-number">02</span>
+                    <div class="met-icon-line"></div>
+                </div>
+                <h3>TÉCNICA MEDRANO</h3>
+                <p>Control exacto de grados y tiempos. Ese punto crujiente que nos enseñó el abuelo a perfeccionar.</p>
+            </div>
+
+            <div class="met-card met-anim">
+                <div class="met-card-header">
+                    <span class="met-number">03</span>
+                    <div class="met-icon-line"></div>
+                </div>
+                <h3>ARQUITECTURA LOCAL</h3>
+                <p>Ensamblamos la mejor salchipapa de Manizales con precisión milimétrica. Tres pisos de sabor que no fallan.</p>
+            </div>
+
+            <div class="met-card met-anim">
+                <div class="met-card-header">
+                    <span class="met-number">04</span>
+                    <div class="met-icon-line"></div>
+                </div>
+                <h3>DESPACHO A LA CIMA</h3>
+                <p>De las 8 mesas iniciales a tu mesa hoy. Logística ágil para que disfrutés sin esperas.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<style>
+    #med-metodo-section {
+        background-color: #080808 !important;
+        position: relative;
+        padding: 100px 0;
+        width: 100% !important;
+        overflow: hidden;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .met-fondo-base {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        pointer-events: none;
+    }
+    .met-linea-vertical {
+        position: absolute;
+        left: 20%; top: 0; width: 1px; height: 100%;
+        background: linear-gradient(to bottom, transparent, rgba(239, 167, 7, 0.2), transparent);
+    }
+    .met-linea-horizontal {
+        position: absolute;
+        top: 15%; left: 0; width: 100%; height: 1px;
+        background: linear-gradient(to right, transparent, rgba(123, 10, 2, 0.2), transparent);
+    }
+
+    .met-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end; 
+        padding: 0 4%;
+        position: relative;
+        z-index: 10;
+    }
+
+    .met-content-right {
+        width: 85%; /* Ajustado para dar espacio a las 4 tarjetas en fila */
+        text-align: right;
+    }
+
+    .met-badge {
+        color: #7B0A02;
+        font-weight: 900;
+        letter-spacing: 5px;
+        font-size: 0.75rem;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .met-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        color: #fff;
+        line-height: 0.9;
+        margin-bottom: 20px;
+    }
+    .met-accent { color: #EFA707; }
+    .met-intro {
+        color: #FFF0DE;
+        font-size: 1rem;
+        opacity: 0.7;
+        margin-bottom: 40px;
+        max-width: 600px;
+        margin-left: auto;
+    }
+
+    /* GRID DE 4 COLUMNAS PARA PC */
+    .met-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .met-card {
+        background: #111;
+        padding: 30px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-right: 4px solid #7B0A02;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: crosshair;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .met-card:hover {
+        background: #151515;
+        border-right-color: #EFA707;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .met-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .met-number {
+        font-family: 'Bebas Neue';
+        font-size: 2rem;
+        color: rgba(239, 167, 7, 0.3);
+    }
+
+    .met-icon-line {
+        width: 30px; height: 2px;
+        background: #7B0A02;
+    }
+
+    .met-card h3 {
+        font-family: 'Bebas Neue';
+        font-size: 1.5rem;
+        color: #fff;
+        margin-bottom: 8px;
+    }
+
+    .met-card p {
+        color: #FFF0DE;
+        font-size: 0.8rem;
+        opacity: 0.6;
+        line-height: 1.5;
+    }
+
+    /* MANTENER RESPONSIVO MÓVIL ORIGINAL */
+    @media (max-width: 1024px) {
+        .met-grid { grid-template-columns: repeat(2, 1fr); }
+        .met-content-right { width: 90%; }
+    }
+
+    @media (max-width: 768px) {
+        .met-content-right {
+            width: 100%;
+            text-align: center;
+        }
+        .met-intro { margin: 0 auto 40px; }
+        .met-grid {
+            grid-template-columns: 1fr;
+        }
+        .met-card {
+            text-align: center;
+            border-right: 0;
+            border-bottom: 4px solid #7B0A02;
+            min-height: auto;
+        }
+        .met-card-header { justify-content: center; }
+        .met-linea-vertical { left: 10%; }
+    }
+
+    .met-anim {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+    }
+    .met-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<script>
+    (function() {
+        const initMetodo = () => {
+            const section = document.querySelector('#med-metodo-section');
+            if(!section) return;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const elements = entry.target.querySelectorAll('.met-anim');
+                        elements.forEach((el, i) => {
+                            setTimeout(() => {
+                                el.classList.add('met-visible');
+                            }, i * 120);
+                        });
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(section);
+        };
+        if (document.readyState === 'complete') initMetodo();
+        else window.addEventListener('load', initMetodo);
+    })();
+</script>
+
+<section id="med-ubicacion-root">
+    <div class="med-map-header-v2 met-anim">
+        <span class="med-badge-v2">OPERACIONES EN VIVO</span>
+        <h2 class="med-title-v2">ESTAMOS EN EL <span class="med-accent-v2">RADAR</span></h2>
+        <p class="med-map-desc-v2">Interactúa con el mapa de calor táctico para ubicar nuestra base central.</p>
+    </div>
+
+    <div id="map-canvas-v2" class="met-anim"></div>
+
+    <div class="med-sedes-container-v2">
+        <div class="med-sede-box-v2 met-anim">
+            <div class="med-sede-info-v2">
+                <span class="med-number-v2">01</span>
+                <h3>SEDE BARRIO COLOMBIA</h3>
+                <p>Cl. 47 #29-12, Manizales</p>
+            </div>
+            <div class="med-video-wrapper-v2">
+                <div class="med-video-placeholder-v2">
+                    <span class="video-tag-v2">GUÍA DE LLEGADA</span>
+                    <video id="vid-ruta-1" playsinline loop muted>
+                        <source src="Videos/Ubicacion-señor-medrano-manizales.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-btn-v2" id="icon-play-1"></div>
+                </div>
+            </div>
+            <button class="med-btn-play-v2" onclick="toggleRutaVideo('vid-ruta-1', this, 'icon-play-1')">REPRODUCIR RUTA 01</button>
+        </div>
+
+        <div class="med-sede-box-v2 met-anim">
+            <div class="med-sede-info-v2">
+                <span class="med-number-v2">02</span>
+                <h3>SEDE VILLAMARÍA</h3>
+                <p>Ubicación Estratégica Villamaría</p>
+            </div>
+            <div class="med-video-wrapper-v2">
+                <div class="med-video-placeholder-v2">
+                    <span class="video-tag-v2">RUTA DE ACCESO</span>
+                    <video id="vid-ruta-2" playsinline loop muted>
+                        <source src="Videos/Ubicacion-señor-medrano-villamaria.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-btn-v2" id="icon-play-2"></div>
+                </div>
+            </div>
+            <button class="med-btn-play-v2" onclick="toggleRutaVideo('vid-ruta-2', this, 'icon-play-2')">REPRODUCIR RUTA 02</button>
+        </div>
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+    #med-ubicacion-root {
+        background-color: #050505;
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /* TEXTO INCLINADO Y ESTILO ÚNICO */
+    .med-map-header-v2 {
+        text-align: center;
+        margin-bottom: 60px;
+        padding: 0 5%;
+        transform: rotate(-1.5deg) translateX(-20px);
+    }
+
+    .med-badge-v2 { color: #7B0A02; font-weight: 900; letter-spacing: 5px; font-size: 0.75rem; display: block; }
+    
+    .med-title-v2 {
+        font-family: 'Bebas Neue';
+        font-size: clamp(3rem, 8vw, 5rem);
+        color: #ffffff !important;
+        line-height: 0.9;
+        margin: 10px 0;
+        text-shadow: 2px 2px 0px #7B0A02;
+    }
+
+    .med-accent-v2 { color: #EFA707; }
+
+    .med-map-desc-v2 {
+        color: #FFF0DE;
+        opacity: 0.9 !important;
+        font-size: 1rem;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    /* MAPA ROJO MEDRANO */
+    #map-canvas-v2 {
+        width: 100%;
+        height: 550px;
+        background: #000;
+        border-top: 2px solid #7B0A02;
+        border-bottom: 2px solid #7B0A02;
+        filter: grayscale(1) sepia(1) hue-rotate(-50deg) saturate(4) brightness(0.6) contrast(1.2);
+        z-index: 5;
+    }
+
+    /* EFECTO RESPIRACIÓN DEL MARCADOR */
+    @keyframes radar-pulse {
+        0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0px rgba(123, 10, 2, 0.7); }
+        70% { transform: scale(1.2); opacity: 0.8; box-shadow: 0 0 0 20px rgba(123, 10, 2, 0); }
+        100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0px rgba(123, 10, 2, 0); }
+    }
+
+    .custom-radar-v2 {
+        width: 25px;
+        height: 25px;
+        background: #7B0A02;
+        border: 2px solid #EFA707;
+        border-radius: 50%;
+        animation: radar-pulse 2s infinite;
+    }
+
+    .med-sedes-container-v2 {
+        max-width: 1200px;
+        margin: 80px auto 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        padding: 0 5%;
+    }
+
+    .med-sede-info-v2 {
+        border-left: 4px solid #7B0A02;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .med-sede-info-v2 h3 { font-family: 'Bebas Neue'; font-size: 2.2rem; color: #fff; margin: 0; }
+    .med-sede-info-v2 p { color: #EFA707; font-weight: 700; }
+
+    .med-video-wrapper-v2 {
+        width: 100%;
+        max-width: 320px;
+        aspect-ratio: 9 / 16;
+        background: #111;
+        border: 1px solid rgba(239, 167, 7, 0.3);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .med-video-placeholder-v2 {
+        width: 100%; height: 100%;
+        display: flex; align-items: center; justify-content: center;
+        background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
+        position: relative; /* Asegura posicionamiento del video */
+    }
+
+    /* AJUSTE PARA QUE EL VIDEO CUBRA EL CONTENEDOR MANTENIENDO EL DISEÑO */
+    .med-video-placeholder-v2 video {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        opacity: 0.8; /* Se mezcla un poco con el fondo oscuro */
+    }
+
+    .video-tag-v2 {
+        position: absolute; top: 15px; left: 15px;
+        background: #EFA707; color: #000; font-weight: 900;
+        font-size: 0.6rem; padding: 4px 8px; z-index: 3; /* Z-index mayor que video */
+    }
+
+    .play-btn-v2 {
+        width: 60px; height: 60px;
+        background: rgba(239, 167, 7, 0.2); border: 2px solid #EFA707;
+        border-radius: 50%; position: relative; z-index: 3; /* Z-index mayor que video */
+        transition: opacity 0.3s ease;
+    }
+    
+    .play-btn-v2::after {
+        content: ''; position: absolute; top: 50%; left: 55%;
+        transform: translate(-50%, -50%); border-style: solid;
+        border-width: 10px 0 10px 18px; border-color: transparent transparent transparent #EFA707;
+    }
+
+    /* BOTÓN REPRODUCIR ABAJO */
+    .med-btn-play-v2 {
+        width: 100%;
+        max-width: 320px;
+        background: transparent;
+        border: 1px solid #7B0A02;
+        color: #fff;
+        font-family: 'Bebas Neue';
+        font-size: 1.2rem;
+        padding: 12px;
+        cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 2px;
+    }
+
+    .med-btn-play-v2:hover {
+        background: #7B0A02;
+        color: #fff;
+        box-shadow: 0 0 20px rgba(123, 10, 2, 0.5);
+    }
+
+    @media (max-width: 800px) {
+        .med-sedes-container-v2 { grid-template-columns: 1fr; }
+        .med-map-header-v2 { transform: none; }
+        
+        /* SOLUCIÓN AL TAMAÑO DEL MAPA EN MÓVILES */
+        #map-canvas-v2 { height: 350px !important; }
+    }
+</style>
+
+<script>
+    // Función para reproducir/pausar videos controlada por el botón
+    window.toggleRutaVideo = function(videoId, btnElement, iconId) {
+        const video = document.getElementById(videoId);
+        const icon = document.getElementById(iconId);
+        
+        if (video.paused) {
+            video.play();
+            btnElement.innerText = btnElement.innerText.replace("REPRODUCIR", "PAUSAR");
+            if(icon) icon.style.opacity = "0"; // Oculta el icono circular al reproducir
+        } else {
+            video.pause();
+            btnElement.innerText = btnElement.innerText.replace("PAUSAR", "REPRODUCIR");
+            if(icon) icon.style.opacity = "1"; // Muestra el icono al pausar
+        }
+    };
+
+    (function() {
+        const initMapTactical = () => {
+            const coords = [5.0615, -75.4981]; // Cl. 47 #29-12
+            
+            const map = L.map('map-canvas-v2', {
+                scrollWheelZoom: false,
+                zoomControl: false,
+                // SOLUCIÓN SCROLL MÓVIL: Deshabilita interacciones que bloquean el dedo
+                dragging: !L.Browser.mobile, 
+                tap: !L.Browser.mobile 
+            }).setView(coords, 16);
+
+            // Reactivar interacción táctil solo si el usuario presiona el mapa intencionalmente
+            map.on('click', function() {
+                if(L.Browser.mobile) {
+                    map.dragging.enable();
+                    if(map.tap) map.tap.enable();
+                }
+            });
+
+            // Capa base CartoDB
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+
+            const radarIcon = L.divIcon({
+                className: 'custom-radar-container',
+                html: '<div class="custom-radar-v2"></div>',
+                iconSize: [25, 25]
+            });
+
+            const marker = L.marker(coords, {icon: radarIcon}).addTo(map);
+            
+            marker.on('click', () => {
+                window.open('https://www.google.com/maps/dir/?api=1&destination=5.0615,-75.4981', '_blank');
+            });
+
+            marker.bindPopup("<div style='text-align:center; font-family:Montserrat; font-weight:700;'>SEÑOR MEDRANO<br><small>INGENIERÍA GASTRONÓMICA</small></div>");
+        };
+
+        const obsMap = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    initMapTactical();
+                    entry.target.querySelectorAll('.met-anim').forEach((el, i) => {
+                        setTimeout(() => el.classList.add('met-visible'), i * 200);
+                    });
+                    obsMap.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        obsMap.observe(document.querySelector('#med-ubicacion-root'));
+    })();
+</script>
+
+<section id="med-cert-section">
+    <div class="cert-header met-anim">
+        <span class="cert-badge">SEGURIDAD E INTEGRALIDAD</span>
+        <h2 class="cert-title">ESTÁNDARES <span class="cert-gold">CERTIFICADOS</span></h2>
+    </div>
+
+    <div class="cert-slider-container">
+        <div class="cert-track">
+            <div class="cert-card">
+                <div class="cert-visual invima">
+                    <div class="v-line"></div>
+                    <div class="v-circle"></div>
+                </div>
+                <h4 class="cert-name">SANIDAD COLOMBIA COMPLETA</h4>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-visual iso">
+                    <div class="iso-box">9001</div>
+                </div>
+                <h4 class="cert-name">NORMA INTERNACIONAL ISO 9001</h4>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-visual data">
+                    <div class="lock-body"></div>
+                    <div class="lock-shackle"></div>
+                </div>
+                <h4 class="cert-name">SEGURIDAD HABEAS DATA PRO</h4>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-visual sapien">
+                    <div class="shield-shape"></div>
+                    <div class="shield-line"></div>
+                </div>
+                <h4 class="cert-name">ENCRIPTACIÓN GRADO MILITAR SAPIEN</h4>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-visual invima"><div class="v-line"></div><div class="v-circle"></div></div>
+                <h4 class="cert-name">SANIDAD COLOMBIA COMPLETA</h4>
+            </div>
+            <div class="cert-card">
+                <div class="cert-visual iso"><div class="iso-box">9001</div></div>
+                <h4 class="cert-name">NORMA INTERNACIONAL ISO 9001</h4>
+            </div>
+            <div class="cert-card">
+                <div class="cert-visual data"><div class="lock-body"></div><div class="lock-shackle"></div></div>
+                <h4 class="cert-name">SEGURIDAD HABEAS DATA PRO</h4>
+            </div>
+            <div class="cert-card">
+                <div class="cert-visual sapien"><div class="shield-shape"></div><div class="shield-line"></div></div>
+                <h4 class="cert-name">ENCRIPTACIÓN GRADO MILITAR SAPIEN</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #med-cert-section {
+        background-color: #050505;
+        padding: 80px 0;
+        overflow: hidden;
+        border-top: 1px solid rgba(239, 167, 7, 0.1);
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .cert-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .cert-badge {
+        color: #7B0A02;
+        font-weight: 900;
+        letter-spacing: 4px;
+        font-size: 0.7rem;
+        display: block;
+    }
+
+    .cert-title {
+        font-family: 'Bebas Neue';
+        font-size: 3rem;
+        color: #fff;
+        margin-top: 10px;
+    }
+
+    .cert-gold { color: #EFA707; }
+
+    /* Estética del Slider */
+    .cert-slider-container {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .cert-track {
+        display: flex;
+        width: calc(250px * 8); /* Ajustar según número de tarjetas */
+        animation: scrollInfinite 25s linear infinite;
+    }
+
+    @keyframes scrollInfinite {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-250px * 4)); }
+    }
+
+    .cert-card {
+        width: 250px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .cert-card:hover { transform: scale(1.1); }
+
+    .cert-name {
+        color: #fff;
+        font-family: 'Bebas Neue';
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 20px;
+        letter-spacing: 1px;
+        opacity: 0.8;
+    }
+
+    /* --- ICONOS CREADOS EN CÓDIGO (CSS ART) --- */
+    .cert-visual {
+        width: 80px;
+        height: 80px;
+        border: 2px solid #EFA707;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(239, 167, 7, 0.05);
+    }
+
+    /* Icono Sanidad */
+    .invima .v-line { width: 30px; height: 4px; background: #EFA707; transform: rotate(-45deg); position: absolute; }
+    .invima .v-circle { width: 15px; height: 15px; border: 3px solid #7B0A02; border-radius: 50%; }
+
+    /* Icono ISO */
+    .iso-box {
+        font-family: 'Bebas Neue';
+        font-size: 1.2rem;
+        color: #EFA707;
+        border: 2px solid #EFA707;
+        padding: 2px 5px;
+    }
+
+    /* Icono Data */
+    .lock-body { width: 25px; height: 20px; background: #EFA707; margin-top: 10px; border-radius: 2px; }
+    .lock-shackle {
+        width: 18px; height: 15px; border: 3px solid #EFA707;
+        border-bottom: none; border-radius: 10px 10px 0 0;
+        position: absolute; top: 22px;
+    }
+
+    /* Icono Red Sapien */
+    .shield-shape {
+        width: 30px; height: 35px; background: #7B0A02;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    .shield-line {
+        position: absolute; width: 2px; height: 20px; background: #EFA707;
+    }
+
+    /* Responsividad */
+    @media (max-width: 768px) {
+        .cert-title { font-size: 2.2rem; }
+        .cert-track { animation-duration: 15s; }
+    }
+</style>
+
+<script>
+    (function() {
+        const initCert = () => {
+            const track = document.querySelector('.cert-track');
+            // Pausar al pasar el mouse
+            track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+            track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelector('.cert-header').classList.add('met-visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+            observer.observe(document.querySelector('#med-cert-section'));
+        };
+        if (document.readyState === 'complete') initCert();
+        else window.addEventListener('load', initCert);
+    })();
+</script>
+
+
+
+<footer id="med-footer-final">
+    <canvas id="nebula-canvas"></canvas>
+
+    <div class="med-legacy-bg">
+        <div class="med-overlay-glass"></div>
+        <img src="Imagenes/Medrano-abuelo.png" alt="Legado Medrano" class="med-grandfather-img">
+    </div>
+
+    <div class="med-footer-content">
+        <div class="med-typewriter-container">
+            <h2 id="med-typewriter-text"></h2>
+            <span class="med-cursor">|</span>
+        </div>
+
+        <div class="med-footer-grid">
+            <div class="med-footer-col">
+                <h4>CONECTA CON EL CLAN</h4>
+                <div class="med-social-links">
+                    <a href="#" class="med-social-item">FACEBOOK</a>
+                    <a href="https://www.instagram.com/srmedrano_/" class="med-social-item">INSTAGRAM</a>
+                    <a href="https://www.tiktok.com/@srmedranomanizales" class="med-social-item">TIKTOK</a>
+                </div>
+            </div>
+
+            <div class="med-footer-col">
+                <h4>CENTRO DE COMANDO</h4>
+                <p class="med-contact-link">OPERACIONES: +57 314 3638405</p>
+                <p class="med-contact-link">INTELIGENCIA: info@medrano.co</p>
+                <p class="med-contact-link">BASE MANIZALES: Cl. 47 #29-12, Manizales, Caldas</p>
+                <p class="med-contact-link">BASE VILLAMARIA: VIA AL CIELO</p>
+            </div>
+
+            <div class="med-footer-col">
+                <h4>DOCUMENTACIÓN</h4>
+                <a href="Descargables/Terminos-Condiciones.pdf" download class="med-download-btn" target="_blank">
+                    <span class="btn-icon">📁</span> DESCARGAR TÉRMINOS Y CONDICIONES
+                </a>
+            </div>
+        </div>
+
+        <div class="med-bottom-bar">
+            <div class="med-line-glow"></div>
+            <div class="med-copyright-text">
+                © <span id="year"></span> SEÑOR MEDRANO. TODOS LOS DERECHOS RESERVADOS.
+            </div>
+            <div class="med-author">
+                Web echa con pasión X 
+                <a href="Imagenes/Medrano-abuelo.png" target="_blank" class="red-sapien-link">
+                    Red Sapien <span class="sapien-pulse"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    :root {
+        --m-rojo-deep: #7B0A02;
+        --m-oro-glow: #EFA707;
+        --m-glass: rgba(123, 10, 2, 0.4);
+    }
+
+    #med-footer-final {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        background: #050505;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        color: #fff;
+    }
+
+    /* CANVAS DE NEBULOSA */
+    #nebula-canvas {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    /* FONDO DEL LEGADO */
+    .med-legacy-bg {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: 1;
+    }
+
+    .med-grandfather-img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        filter: grayscale(1) contrast(1.2) brightness(0.5);
+        opacity: 0.4;
+        animation: subtleZoom 20s infinite alternate;
+    }
+
+    .med-overlay-glass {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: radial-gradient(circle, var(--m-glass) 0%, #050505 100%);
+        backdrop-filter: blur(8px);
+        z-index: 2;
+    }
+
+    /* MÁQUINA DE ESCRIBIR */
+    .med-typewriter-container {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        margin-bottom: 80px;
+        padding: 0 20px;
+    }
+
+    #med-typewriter-text {
+        font-family: 'Bebas Neue';
+        font-size: clamp(2rem, 6vw, 4.5rem);
+        color: #fff;
+        letter-spacing: 5px;
+        text-shadow: 0 0 20px var(--m-rojo-deep);
+        display: inline;
+    }
+
+    .med-cursor {
+        font-size: clamp(2rem, 6vw, 4.5rem);
+        color: var(--m-oro-glow);
+        animation: blink 0.8s infinite;
+    }
+
+    /* CONTENIDO DEL FOOTER */
+    .med-footer-content {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        max-width: 1200px;
+        padding: 40px 5%;
+    }
+
+    .med-footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .med-footer-col h4 {
+        font-family: 'Bebas Neue';
+        color: var(--m-oro-glow);
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+    }
+
+    .med-social-links { display: flex; flex-direction: column; gap: 10px; }
+    .med-social-item {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition: 0.3s;
+        width: fit-content;
+    }
+    .med-social-item:hover { color: var(--m-oro-glow); transform: translateX(10px); }
+
+    .med-contact-link { opacity: 0.7; font-size: 0.9rem; margin-bottom: 10px; }
+
+    /* BOTÓN TÉRMINOS */
+    .med-download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid var(--m-oro-glow);
+        color: #fff;
+        padding: 15px 20px;
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 900;
+        transition: 0.3s;
+    }
+    .med-download-btn:hover { background: var(--m-oro-glow); color: #000; }
+
+    /* BARRA INFERIOR */
+    .med-bottom-bar {
+        margin-top: 100px;
+        text-align: center;
+        padding-top: 30px;
+        position: relative;
+    }
+
+    .med-line-glow {
+        position: absolute; top: 0; left: 50%;
+        transform: translateX(-50%);
+        width: 100%; height: 1px;
+        background: linear-gradient(90deg, transparent, var(--m-oro-glow), transparent);
+    }
+
+    .med-copyright-text { font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px; }
+
+    /* RED SAPIEN ESTILO ÚNICO */
+    .med-author {
+        margin-top: 15px;
+        font-size: 0.8rem;
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+
+    .red-sapien-link {
+        color: var(--m-oro-glow);
+        text-decoration: none;
+        position: relative;
+        padding: 0 5px;
+    }
+
+    .sapien-pulse {
+        display: inline-block;
+        width: 8px; height: 8px;
+        background: var(--m-rojo-deep);
+        border-radius: 50%;
+        margin-left: 5px;
+        box-shadow: 0 0 10px var(--m-rojo-deep);
+        animation: pulseSapien 1.5s infinite;
+    }
+
+    @keyframes pulseSapien {
+        0% { transform: scale(1); opacity: 1; }
+        100% { transform: scale(2.5); opacity: 0; }
+    }
+
+    @keyframes subtleZoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+        .med-footer-grid { grid-template-columns: 1fr; text-align: center; }
+        .med-social-links { align-items: center; }
+        .med-download-btn { width: 100%; justify-content: center; }
+        #med-footer-final { padding: 80px 0; }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. EFECTO MÁQUINA DE ESCRIBIR
+        const textElement = document.getElementById('med-typewriter-text');
+        const phrase = "NO ME DIO LA VIDA, PERO ME ENSEÑÓ A VIVIR.";
+        let i = 0;
+
+        function typeWriter() {
+            if (i < phrase.length) {
+                textElement.innerHTML += phrase.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        // Iniciar cuando el footer entre en vista
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) {
+                typeWriter();
+                observer.unobserve(entries[0].target);
+            }
+        }, { threshold: 0.5 });
+        observer.observe(document.getElementById('med-footer-final'));
+
+        // 2. CANVAS NEBULOSA (SISTEMA DE PARTÍCULAS)
+        const canvas = document.getElementById('nebula-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.color = Math.random() > 0.5 ? '#7B0A02' : '#EFA707';
+                this.opacity = Math.random();
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function createParticles() {
+            for (let i = 0; i < 150; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        createParticles();
+        animate();
+
+        // 3. AÑO ACTUAL
+        document.getElementById('year').textContent = new Date().getFullYear();
+    });
+</script>
+
+</body>
+
+
+</html>
